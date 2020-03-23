@@ -1,9 +1,8 @@
 const express = require('express');
 const app = express();
 const port = 4000;
-let data = require('./data');
 
-app.get('/', (req, res) => res.send('Hello World!'));
+let data = require('./data');
 
 app.get('/poemas/:id', (req, res) => {
     const id = req.params.id;
@@ -12,10 +11,10 @@ app.get('/poemas/:id', (req, res) => {
     if (poema) {
         res.json(poema);
      } else {
-        res.json({ message: `poema ${id} no existe :(`})
+        res.json({message: `Poema ${id} no existe :(`})
      }
  });
 
 app.listen(port, () => {
-    console.log(`app listening at ${port}`);
+    console.log(`App escuchando en puerto ${port}`);
 });
