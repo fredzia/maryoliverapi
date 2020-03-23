@@ -15,6 +15,10 @@ app.get('/poemas/:id', (req, res) => {
      }
  });
 
+ app.get('/cantidadDePoemas', (req, res) => {
+    res.json(data.length);
+ });
+
 app.listen(port, () => {
     console.log(`App escuchando en puerto ${port}`);
 });
